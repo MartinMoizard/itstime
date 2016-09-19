@@ -23,6 +23,6 @@ class StationViewCell: UITableViewCell {
     }
     
     func bind(with viewModel: StationViewModel) {
-        viewModel.name.bindTo(name.rx.text).addDisposableTo(disposeBag)
+        viewModel.name.map{ Optional.some($0) }.bindTo(name.rx.text).addDisposableTo(disposeBag)
     }
 }

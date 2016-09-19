@@ -10,5 +10,9 @@ import Foundation
 import RxSwift
 
 class StationsViewModel {
-    var stations: Observable<[Station]> = Observable.empty()
+    let stations: Observable<[Station]>
+    
+    init(_ stations: Observable<[Station]>) {
+        self.stations = stations
+    }
 }

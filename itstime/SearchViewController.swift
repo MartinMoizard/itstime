@@ -13,6 +13,9 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        let view = self.view as! SearchableStationsView
+        view.bind(with: SearchableStationsViewModel())
     }
 }
 
@@ -24,6 +27,6 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController: UITableViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        self.view.endEditing(true)
+      self.view.endEditing(true)
     }
 }

@@ -13,7 +13,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="SearchableStationsView" customModule="itstime" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -23,7 +23,7 @@
                         <outlet property="delegate" destination="-1" id="3VY-V4-u58"/>
                     </connections>
                 </searchBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UQj-tQ-VXB">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UQj-tQ-VXB" customClass="StationsView" customModule="itstime" customModuleProvider="target">
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="0IW-g8-uSE"/>
@@ -40,6 +40,10 @@
                 <constraint firstItem="5mW-8j-gsR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="i4Y-lt-7Zi"/>
                 <constraint firstAttribute="bottom" secondItem="UQj-tQ-VXB" secondAttribute="bottom" id="zVh-JM-5zk"/>
             </constraints>
+            <connections>
+                <outlet property="searchField" destination="5mW-8j-gsR" id="vht-9f-8XI"/>
+                <outlet property="stationsView" destination="UQj-tQ-VXB" id="g42-lm-QI3"/>
+            </connections>
             <point key="canvasLocation" x="33.5" y="107.5"/>
         </view>
     </objects>

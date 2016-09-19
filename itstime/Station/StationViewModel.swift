@@ -13,7 +13,7 @@ import RxCocoa
 class StationViewModel {
     private let station: Observable<Station>
     
-    let name: Observable<String?>
+    let name: Observable<String>
     
     init(_ station: Station) {
         self.station = Observable.just(station)

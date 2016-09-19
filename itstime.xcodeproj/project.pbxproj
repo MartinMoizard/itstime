@@ -27,6 +27,8 @@
 		5BB52BBF1D8D99B80020D33D /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB52BBD1D8D99B80020D33D /* SearchViewController.xib */; };
 		5BB52BC21D8D9ADC0020D33D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB52BC01D8D9ADC0020D33D /* FavoritesViewController.swift */; };
 		5BB52BC31D8D9ADC0020D33D /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB52BC11D8D9ADC0020D33D /* FavoritesViewController.xib */; };
+		868C02371D901A2E00D6E837 /* SearchableStationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C02361D901A2E00D6E837 /* SearchableStationsViewModel.swift */; };
+		868C02391D901A3D00D6E837 /* SearchableStationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C02381D901A3D00D6E837 /* SearchableStationsView.swift */; };
 		972F71501411D9A6C804AE54 /* Pods_itstime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF51A1F4C773E939BD197D8 /* Pods_itstime.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		5BB52BC01D8D9ADC0020D33D /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		5BB52BC11D8D9ADC0020D33D /* FavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		84CCEED3C3CAEFA0C16CAA06 /* Pods-itstime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itstime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-itstime/Pods-itstime.debug.xcconfig"; sourceTree = "<group>"; };
+		868C02361D901A2E00D6E837 /* SearchableStationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableStationsViewModel.swift; sourceTree = "<group>"; };
+		868C02381D901A3D00D6E837 /* SearchableStationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableStationsView.swift; sourceTree = "<group>"; };
 		EEF51A1F4C773E939BD197D8 /* Pods_itstime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itstime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5039EFF27A1B38070CDBFB7 /* Pods-itstime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itstime.release.xcconfig"; path = "Pods/Target Support Files/Pods-itstime/Pods-itstime.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +182,7 @@
 				5BB52BC41D8D9FD00020D33D /* Model */,
 				5B544BCA1D8DE0BB00F97C0E /* Station */,
 				5B544BDB1D8F30A900F97C0E /* Stations */,
+				868C02351D901A2500D6E837 /* SearchableStations */,
 				5BB52B8C1D8D92720020D33D /* AppDelegate.swift */,
 				5BB52BBA1D8D94900020D33D /* AppCoordinator.swift */,
 				5BB52B931D8D92720020D33D /* Assets.xcassets */,
@@ -217,6 +222,15 @@
 				5B544BCF1D8EE06F00F97C0E /* Direction.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		868C02351D901A2500D6E837 /* SearchableStations */ = {
+			isa = PBXGroup;
+			children = (
+				868C02361D901A2E00D6E837 /* SearchableStationsViewModel.swift */,
+				868C02381D901A3D00D6E837 /* SearchableStationsView.swift */,
+			);
+			path = SearchableStations;
 			sourceTree = "<group>";
 		};
 		ADE35FC94B41B5EF8CCABD75 /* Pods */ = {
@@ -417,9 +431,11 @@
 			files = (
 				5BB52BBE1D8D99B80020D33D /* SearchViewController.swift in Sources */,
 				5B544BD91D8F27B800F97C0E /* StationViewCell.swift in Sources */,
+				868C02391D901A3D00D6E837 /* SearchableStationsView.swift in Sources */,
 				5B544BC91D8DE06300F97C0E /* Station.swift in Sources */,
 				5B544BDF1D8F30DB00F97C0E /* StationsView.swift in Sources */,
 				5B544BDD1D8F30B900F97C0E /* StationsViewModel.swift in Sources */,
+				868C02371D901A2E00D6E837 /* SearchableStationsViewModel.swift in Sources */,
 				5BB52BBB1D8D94900020D33D /* AppCoordinator.swift in Sources */,
 				5B544BD01D8EE06F00F97C0E /* Direction.swift in Sources */,
 				5B544BCC1D8DE0D200F97C0E /* StationViewModel.swift in Sources */,

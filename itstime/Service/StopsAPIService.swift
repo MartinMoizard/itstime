@@ -27,7 +27,7 @@ final class StopsAPIService {
     
     static func search(withName name: String) -> Promise<[Station]> {
         return Promise { fulfill, reject in
-            request(ResourcePath.stops.path, method: .get, parameters: ["qq": name]).responseArray { (response: DataResponse<[Station]>) -> () in
+            request(ResourcePath.stops.path, method: .get, parameters: ["q": name]).responseArray { (response: DataResponse<[Station]>) -> Void in
                 if response.result.isSuccess {
                     fulfill(response.result.value ?? [])
                 } else {

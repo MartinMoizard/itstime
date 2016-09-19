@@ -14,6 +14,10 @@ import RxCocoa
 class StationsView: UITableView {
     private var disposeBag = DisposeBag()
     
+    override func awakeFromNib() {
+        self.register(UINib(nibName: "StationViewCell", bundle: nil), forCellReuseIdentifier: StationViewCell.reusableIdentifier)
+    }
+    
     func bind(with viewModel: StationsViewModel) {
         viewModel.stations.bindTo(self.rx.items(cellIdentifier: StationViewCell.reusableIdentifier, cellType: StationViewCell.self)) { (row, element, cell) in
             cell.bind(with: StationViewModel(element))
