@@ -20,12 +20,13 @@ class SearchableStationsViewModel {
     init() {
         self.stations = self.search
             .debounce(0.5, scheduler: MainScheduler.instance)
-            .flatMap { searchString in
+            .filter { searchString in !searchString.isEmpty }
+            .flatMapLatest { searchString in
                 return Observable.create { observer in
                     _ = StopsAPIService.search(withName: searchString).then { stops in
                         observer.onNext(stops)
-                        }.catch { error in
-                            observer.onError(error)
+                    }.catch { error in
+                        observer.onError(error)
                     }
                     return Disposables.create()
                 }
