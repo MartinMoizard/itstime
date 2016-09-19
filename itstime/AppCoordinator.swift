@@ -32,9 +32,11 @@ final class AppCoordinator : Coordinator {
     
     func setupTabBar() {
         let favVc = FavoritesViewController()
+        favVc.delegate = self
         favVc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.favorites, tag: 0)
         
         let searchVc = SearchViewController()
+        searchVc.delegate = self
         searchVc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.search, tag: 1)
         
         self.rootViewController.viewControllers = [favVc, searchVc]
@@ -42,5 +44,13 @@ final class AppCoordinator : Coordinator {
     
     func start() {
         self.rootViewController.selectedIndex = 1
+    }
+}
+
+extension AppCoordinator : CoordinatedViewControllerDelegate {
+    func coordinatedViewControllerDidLoad(_ viewController: CoordinatedViewController) {
+        if let searchVc = viewController as? SearchViewController {
+            searchVc.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.rootViewController.tabBar.frame.height, 0)
+        }
     }
 }

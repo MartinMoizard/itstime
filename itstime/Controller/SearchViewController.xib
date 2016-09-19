@@ -38,8 +38,9 @@
                 <constraint firstAttribute="trailing" secondItem="UQj-tQ-VXB" secondAttribute="trailing" id="dB1-qQ-NBh"/>
                 <constraint firstAttribute="trailing" secondItem="5mW-8j-gsR" secondAttribute="trailing" id="eGG-xk-PC5"/>
                 <constraint firstItem="5mW-8j-gsR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="i4Y-lt-7Zi"/>
-                <constraint firstAttribute="bottom" secondItem="UQj-tQ-VXB" secondAttribute="bottom" id="zVh-JM-5zk"/>
+                <constraint firstAttribute="bottom" secondItem="UQj-tQ-VXB" secondAttribute="bottom" id="mAh-TB-f6t"/>
             </constraints>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
             <connections>
                 <outlet property="searchField" destination="5mW-8j-gsR" id="vht-9f-8XI"/>
                 <outlet property="stationsView" destination="UQj-tQ-VXB" id="g42-lm-QI3"/>

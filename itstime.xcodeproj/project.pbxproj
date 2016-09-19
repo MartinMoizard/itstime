@@ -17,16 +17,17 @@
 		5B544BDA1D8F27B800F97C0E /* StationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B544BD81D8F27B800F97C0E /* StationViewCell.xib */; };
 		5B544BDD1D8F30B900F97C0E /* StationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B544BDC1D8F30B900F97C0E /* StationsViewModel.swift */; };
 		5B544BDF1D8F30DB00F97C0E /* StationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B544BDE1D8F30DB00F97C0E /* StationsView.swift */; };
+		5BA15EC61D907AA5001D796F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA15EC21D907AA5001D796F /* FavoritesViewController.swift */; };
+		5BA15EC71D907AA5001D796F /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA15EC31D907AA5001D796F /* FavoritesViewController.xib */; };
+		5BA15EC81D907AA5001D796F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA15EC41D907AA5001D796F /* SearchViewController.swift */; };
+		5BA15EC91D907AA5001D796F /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA15EC51D907AA5001D796F /* SearchViewController.xib */; };
+		5BA15ECB1D907DBB001D796F /* CoordinatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA15ECA1D907DBB001D796F /* CoordinatedViewController.swift */; };
 		5BB52B8D1D8D92720020D33D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB52B8C1D8D92720020D33D /* AppDelegate.swift */; };
 		5BB52B941D8D92720020D33D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BB52B931D8D92720020D33D /* Assets.xcassets */; };
 		5BB52B971D8D92720020D33D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB52B951D8D92720020D33D /* LaunchScreen.storyboard */; };
 		5BB52BA21D8D92730020D33D /* itstimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB52BA11D8D92730020D33D /* itstimeTests.swift */; };
 		5BB52BAD1D8D92730020D33D /* itstimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB52BAC1D8D92730020D33D /* itstimeUITests.swift */; };
 		5BB52BBB1D8D94900020D33D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB52BBA1D8D94900020D33D /* AppCoordinator.swift */; };
-		5BB52BBE1D8D99B80020D33D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB52BBC1D8D99B80020D33D /* SearchViewController.swift */; };
-		5BB52BBF1D8D99B80020D33D /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB52BBD1D8D99B80020D33D /* SearchViewController.xib */; };
-		5BB52BC21D8D9ADC0020D33D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB52BC01D8D9ADC0020D33D /* FavoritesViewController.swift */; };
-		5BB52BC31D8D9ADC0020D33D /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB52BC11D8D9ADC0020D33D /* FavoritesViewController.xib */; };
 		868C02371D901A2E00D6E837 /* SearchableStationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C02361D901A2E00D6E837 /* SearchableStationsViewModel.swift */; };
 		868C02391D901A3D00D6E837 /* SearchableStationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C02381D901A3D00D6E837 /* SearchableStationsView.swift */; };
 		972F71501411D9A6C804AE54 /* Pods_itstime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF51A1F4C773E939BD197D8 /* Pods_itstime.framework */; };
@@ -60,6 +61,11 @@
 		5B544BD81D8F27B800F97C0E /* StationViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationViewCell.xib; sourceTree = "<group>"; };
 		5B544BDC1D8F30B900F97C0E /* StationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsViewModel.swift; sourceTree = "<group>"; };
 		5B544BDE1D8F30DB00F97C0E /* StationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsView.swift; sourceTree = "<group>"; };
+		5BA15EC21D907AA5001D796F /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		5BA15EC31D907AA5001D796F /* FavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		5BA15EC41D907AA5001D796F /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5BA15EC51D907AA5001D796F /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		5BA15ECA1D907DBB001D796F /* CoordinatedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatedViewController.swift; sourceTree = "<group>"; };
 		5BB52B891D8D92720020D33D /* itstime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = itstime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB52B8C1D8D92720020D33D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BB52B931D8D92720020D33D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,10 +78,6 @@
 		5BB52BAC1D8D92730020D33D /* itstimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itstimeUITests.swift; sourceTree = "<group>"; };
 		5BB52BAE1D8D92730020D33D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BB52BBA1D8D94900020D33D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		5BB52BBC1D8D99B80020D33D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		5BB52BBD1D8D99B80020D33D /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
-		5BB52BC01D8D9ADC0020D33D /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		5BB52BC11D8D9ADC0020D33D /* FavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		84CCEED3C3CAEFA0C16CAA06 /* Pods-itstime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itstime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-itstime/Pods-itstime.debug.xcconfig"; sourceTree = "<group>"; };
 		868C02361D901A2E00D6E837 /* SearchableStationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableStationsViewModel.swift; sourceTree = "<group>"; };
 		868C02381D901A3D00D6E837 /* SearchableStationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableStationsView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,18 @@
 			path = Stations;
 			sourceTree = "<group>";
 		};
+		5BA15EC11D907AA5001D796F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5BA15ECA1D907DBB001D796F /* CoordinatedViewController.swift */,
+				5BA15EC21D907AA5001D796F /* FavoritesViewController.swift */,
+				5BA15EC31D907AA5001D796F /* FavoritesViewController.xib */,
+				5BA15EC41D907AA5001D796F /* SearchViewController.swift */,
+				5BA15EC51D907AA5001D796F /* SearchViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		5BB52B801D8D92720020D33D = {
 			isa = PBXGroup;
 			children = (
@@ -183,15 +197,12 @@
 				5B544BCA1D8DE0BB00F97C0E /* Station */,
 				5B544BDB1D8F30A900F97C0E /* Stations */,
 				868C02351D901A2500D6E837 /* SearchableStations */,
+				5BA15EC11D907AA5001D796F /* Controller */,
 				5BB52B8C1D8D92720020D33D /* AppDelegate.swift */,
 				5BB52BBA1D8D94900020D33D /* AppCoordinator.swift */,
 				5BB52B931D8D92720020D33D /* Assets.xcassets */,
 				5BB52B951D8D92720020D33D /* LaunchScreen.storyboard */,
 				5BB52B981D8D92720020D33D /* Info.plist */,
-				5BB52BBC1D8D99B80020D33D /* SearchViewController.swift */,
-				5BB52BBD1D8D99B80020D33D /* SearchViewController.xib */,
-				5BB52BC01D8D9ADC0020D33D /* FavoritesViewController.swift */,
-				5BB52BC11D8D9ADC0020D33D /* FavoritesViewController.xib */,
 			);
 			path = itstime;
 			sourceTree = "<group>";
@@ -355,8 +366,8 @@
 				5BB52B971D8D92720020D33D /* LaunchScreen.storyboard in Resources */,
 				5BB52B941D8D92720020D33D /* Assets.xcassets in Resources */,
 				5B544BDA1D8F27B800F97C0E /* StationViewCell.xib in Resources */,
-				5BB52BC31D8D9ADC0020D33D /* FavoritesViewController.xib in Resources */,
-				5BB52BBF1D8D99B80020D33D /* SearchViewController.xib in Resources */,
+				5BA15EC71D907AA5001D796F /* FavoritesViewController.xib in Resources */,
+				5BA15EC91D907AA5001D796F /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,17 +440,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BB52BBE1D8D99B80020D33D /* SearchViewController.swift in Sources */,
 				5B544BD91D8F27B800F97C0E /* StationViewCell.swift in Sources */,
 				868C02391D901A3D00D6E837 /* SearchableStationsView.swift in Sources */,
+				5BA15EC81D907AA5001D796F /* SearchViewController.swift in Sources */,
 				5B544BC91D8DE06300F97C0E /* Station.swift in Sources */,
 				5B544BDF1D8F30DB00F97C0E /* StationsView.swift in Sources */,
+				5BA15ECB1D907DBB001D796F /* CoordinatedViewController.swift in Sources */,
 				5B544BDD1D8F30B900F97C0E /* StationsViewModel.swift in Sources */,
 				868C02371D901A2E00D6E837 /* SearchableStationsViewModel.swift in Sources */,
 				5BB52BBB1D8D94900020D33D /* AppCoordinator.swift in Sources */,
 				5B544BD01D8EE06F00F97C0E /* Direction.swift in Sources */,
 				5B544BCC1D8DE0D200F97C0E /* StationViewModel.swift in Sources */,
-				5BB52BC21D8D9ADC0020D33D /* FavoritesViewController.swift in Sources */,
+				5BA15EC61D907AA5001D796F /* FavoritesViewController.swift in Sources */,
 				5B544BCE1D8EE06900F97C0E /* Line.swift in Sources */,
 				5B544BD31D8EE33000F97C0E /* StopsAPIService.swift in Sources */,
 				5B544BD61D8F23C100F97C0E /* Error.swift in Sources */,

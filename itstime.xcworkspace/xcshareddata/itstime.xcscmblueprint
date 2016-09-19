@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A08D08845F6F1A923E47CF5C7BEE648DA90E4320",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A08D08845F6F1A923E47CF5C7BEE648DA90E4320" : 9223372036854775807,
+    "81BD3B356931B5AC37B92BF7046EE772CA22F50D" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "500DBBD5-CB0D-4C67-AEEC-70D2C65D5428",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A08D08845F6F1A923E47CF5C7BEE648DA90E4320" : "itstime\/",
+    "81BD3B356931B5AC37B92BF7046EE772CA22F50D" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "itstime",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "itstime.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/bitbucket.org\/mrgrob\/crisscross.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "81BD3B356931B5AC37B92BF7046EE772CA22F50D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MartinMoizard\/itstime.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A08D08845F6F1A923E47CF5C7BEE648DA90E4320"
+    }
+  ]
+}

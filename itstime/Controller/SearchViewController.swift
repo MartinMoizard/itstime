@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class SearchViewController: UIViewController {
+class SearchViewController: CoordinatedViewController {
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
