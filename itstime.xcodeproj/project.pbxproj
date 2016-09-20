@@ -28,6 +28,8 @@
 		5BB52BA21D8D92730020D33D /* itstimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB52BA11D8D92730020D33D /* itstimeTests.swift */; };
 		5BB52BAD1D8D92730020D33D /* itstimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB52BAC1D8D92730020D33D /* itstimeUITests.swift */; };
 		5BB52BBB1D8D94900020D33D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB52BBA1D8D94900020D33D /* AppCoordinator.swift */; };
+		863355DD1D9155F200F6661B /* ErrorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863355DB1D9155F200F6661B /* ErrorViewCell.swift */; };
+		863355DE1D9155F200F6661B /* ErrorViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863355DC1D9155F200F6661B /* ErrorViewCell.xib */; };
 		868C02371D901A2E00D6E837 /* SearchableStationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C02361D901A2E00D6E837 /* SearchableStationsViewModel.swift */; };
 		868C02391D901A3D00D6E837 /* SearchableStationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C02381D901A3D00D6E837 /* SearchableStationsView.swift */; };
 		972F71501411D9A6C804AE54 /* Pods_itstime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF51A1F4C773E939BD197D8 /* Pods_itstime.framework */; };
@@ -79,6 +81,8 @@
 		5BB52BAE1D8D92730020D33D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BB52BBA1D8D94900020D33D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		84CCEED3C3CAEFA0C16CAA06 /* Pods-itstime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itstime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-itstime/Pods-itstime.debug.xcconfig"; sourceTree = "<group>"; };
+		863355DB1D9155F200F6661B /* ErrorViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewCell.swift; sourceTree = "<group>"; };
+		863355DC1D9155F200F6661B /* ErrorViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorViewCell.xib; sourceTree = "<group>"; };
 		868C02361D901A2E00D6E837 /* SearchableStationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableStationsViewModel.swift; sourceTree = "<group>"; };
 		868C02381D901A3D00D6E837 /* SearchableStationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableStationsView.swift; sourceTree = "<group>"; };
 		EEF51A1F4C773E939BD197D8 /* Pods_itstime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itstime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +154,8 @@
 			children = (
 				5B544BDC1D8F30B900F97C0E /* StationsViewModel.swift */,
 				5B544BDE1D8F30DB00F97C0E /* StationsView.swift */,
+				863355DB1D9155F200F6661B /* ErrorViewCell.swift */,
+				863355DC1D9155F200F6661B /* ErrorViewCell.xib */,
 			);
 			path = Stations;
 			sourceTree = "<group>";
@@ -260,12 +266,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BB52BB11D8D92730020D33D /* Build configuration list for PBXNativeTarget "itstime" */;
 			buildPhases = (
-				78747D94291DBB7D196417D6 /* 📦 Check Pods Manifest.lock */,
+				78747D94291DBB7D196417D6 /* [CP] Check Pods Manifest.lock */,
 				5BB52B851D8D92720020D33D /* Sources */,
 				5BB52B861D8D92720020D33D /* Frameworks */,
 				5BB52B871D8D92720020D33D /* Resources */,
-				C620C53F0FABD6831007B5D7 /* 📦 Embed Pods Frameworks */,
-				AA0644999E4EEC80E21159B8 /* 📦 Copy Pods Resources */,
+				C620C53F0FABD6831007B5D7 /* [CP] Embed Pods Frameworks */,
+				AA0644999E4EEC80E21159B8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -366,6 +372,7 @@
 				5BB52B971D8D92720020D33D /* LaunchScreen.storyboard in Resources */,
 				5BB52B941D8D92720020D33D /* Assets.xcassets in Resources */,
 				5B544BDA1D8F27B800F97C0E /* StationViewCell.xib in Resources */,
+				863355DE1D9155F200F6661B /* ErrorViewCell.xib in Resources */,
 				5BA15EC71D907AA5001D796F /* FavoritesViewController.xib in Resources */,
 				5BA15EC91D907AA5001D796F /* SearchViewController.xib in Resources */,
 			);
@@ -388,14 +395,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		78747D94291DBB7D196417D6 /* 📦 Check Pods Manifest.lock */ = {
+		78747D94291DBB7D196417D6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,14 +410,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		AA0644999E4EEC80E21159B8 /* 📦 Copy Pods Resources */ = {
+		AA0644999E4EEC80E21159B8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,14 +425,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-itstime/Pods-itstime-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C620C53F0FABD6831007B5D7 /* 📦 Embed Pods Frameworks */ = {
+		C620C53F0FABD6831007B5D7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +451,7 @@
 				868C02391D901A3D00D6E837 /* SearchableStationsView.swift in Sources */,
 				5BA15EC81D907AA5001D796F /* SearchViewController.swift in Sources */,
 				5B544BC91D8DE06300F97C0E /* Station.swift in Sources */,
+				863355DD1D9155F200F6661B /* ErrorViewCell.swift in Sources */,
 				5B544BDF1D8F30DB00F97C0E /* StationsView.swift in Sources */,
 				5BA15ECB1D907DBB001D796F /* CoordinatedViewController.swift in Sources */,
 				5B544BDD1D8F30B900F97C0E /* StationsViewModel.swift in Sources */,

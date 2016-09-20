@@ -8,11 +8,12 @@
 
 import Foundation
 import RxSwift
+import enum Result.Result
 
 class StationsViewModel {
-    let stations: Observable<[Station]>
+    let stations: Observable<Result<[Station], NSError>>
     
-    init(_ stations: Observable<[Station]>) {
+    init(_ stations: Observable<Result<[Station], NSError>>) {
         self.stations = stations
     }
 }

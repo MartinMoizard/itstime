@@ -6,6 +6,7 @@ target 'itstime' do
     pod 'Alamofire',  '~> 4.0'
     pod 'PromiseKit', '~> 4.0'
     pod 'AlamofireObjectMapper', '~> 4.0'
+    pod 'Result',     '~> 3.0'
 end
 
 post_install do |installer|

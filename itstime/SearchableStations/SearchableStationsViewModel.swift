@@ -9,10 +9,11 @@
 import Foundation
 import PromiseKit
 import RxSwift
+import enum Result.Result
 
 class SearchableStationsViewModel {
     let stationsViewModel: StationsViewModel
-    let stations: Observable<[Station]>
+    let stations: Observable<Result<[Station], NSError>>
     let search: PublishSubject<String> = PublishSubject<String>()
     
     private var disposeBag = DisposeBag()
@@ -24,13 +25,14 @@ class SearchableStationsViewModel {
             .flatMapLatest { searchString in
                 return Observable.create { observer in
                     _ = StopsAPIService.search(withName: searchString).then { stops -> () in
-                        observer.onNext(stops)
+                        observer.onNext(Result.success(stops))
                         observer.onCompleted()
                     }.catch { error in
-                        observer.onError(error)
+                        observer.onNext(Result.failure(error as NSError))
                     }
                     return Disposables.create()
                 }
+            .shareReplay(1)
         }
         self.stationsViewModel = StationsViewModel(self.stations)
     }
