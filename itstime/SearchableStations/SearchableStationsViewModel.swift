@@ -23,8 +23,9 @@ class SearchableStationsViewModel {
             .filter { searchString in !searchString.isEmpty }
             .flatMapLatest { searchString in
                 return Observable.create { observer in
-                    _ = StopsAPIService.search(withName: searchString).then { stops in
+                    _ = StopsAPIService.search(withName: searchString).then { stops -> () in
                         observer.onNext(stops)
+                        observer.onCompleted()
                     }.catch { error in
                         observer.onError(error)
                     }
