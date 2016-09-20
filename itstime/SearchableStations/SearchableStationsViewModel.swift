@@ -22,7 +22,7 @@ class SearchableStationsViewModel {
         self.stations = self.search
             .debounce(0.5, scheduler: MainScheduler.instance)
             .filter { searchString in !searchString.isEmpty }
-            .flatMapLatest { searchString in
+            .flatMapLatest { (searchString) -> Observable<Result<[Station], NSError>> in
                 return Observable.create { observer in
                     _ = StopsAPIService.search(withName: searchString).then { stops -> () in
                         observer.onNext(Result.success(stops))
@@ -34,6 +34,7 @@ class SearchableStationsViewModel {
                 }
             .shareReplay(1)
         }
+        
         self.stationsViewModel = StationsViewModel(self.stations)
     }
 }

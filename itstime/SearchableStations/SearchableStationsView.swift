@@ -13,7 +13,7 @@ import RxCocoa
 class SearchableStationsView: UIView {
     @IBOutlet var searchField: UISearchBar!
     @IBOutlet var stationsView: StationsView!
-   
+    
     private var viewModel: SearchableStationsViewModel!
     private var disposeBag = DisposeBag()
    
