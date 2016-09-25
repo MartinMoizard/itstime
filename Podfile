@@ -4,9 +4,7 @@ target 'itstime' do
     pod 'RxSwift',    '~> 3.0.0-beta.1'
     pod 'RxCocoa',    '~> 3.0.0-beta.1'
     pod 'Alamofire',  '~> 4.0'
-    pod 'PromiseKit', '~> 4.0'
     pod 'AlamofireObjectMapper', '~> 4.0'
-    pod 'Result',     '~> 3.0'
 end
 
 post_install do |installer|

@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-import PromiseKit
+import RxSwift
 import AlamofireObjectMapper
 
 final class StopsAPIService {
@@ -25,15 +25,17 @@ final class StopsAPIService {
         }
     }
     
-    static func search(withName name: String) -> Promise<[Station]> {
-        return Promise { fulfill, reject in
+    static func search(withName name: String) -> Observable<[Station]> {
+        return Observable.create { observer in
             request(ResourcePath.stops.path, method: .get, parameters: ["q": name]).responseArray { (response: DataResponse<[Station]>) -> Void in
                 if response.result.isSuccess {
-                    fulfill(response.result.value ?? [])
+                    observer.onNext(response.result.value ?? [])
+                    observer.onCompleted()
                 } else {
-                    reject(response.result.error ?? NSError.timeForAnError(NSLocalizedString("Could fetch results", comment: "")))
+                    observer.onError(response.result.error ?? NSError.timeForAnError(NSLocalizedString("Could fetch results", comment: "")))
                 }
             }
-        }
+            return Disposables.create()
+        };
     }
 }

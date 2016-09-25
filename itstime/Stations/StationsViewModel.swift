@@ -8,12 +8,16 @@
 
 import Foundation
 import RxSwift
-import enum Result.Result
 
 class StationsViewModel {
-    let stations: Observable<Result<[Station], NSError>>
+    enum TableContent {
+        case StationRow(Station)
+        case ErrorRow(Error)
+    }
     
-    init(_ stations: Observable<Result<[Station], NSError>>) {
-        self.stations = stations
+    let tableObservable: Observable<[TableContent]>
+    
+    init(_ observable: Observable<[TableContent]>) {
+        self.tableObservable = observable
     }
 }
