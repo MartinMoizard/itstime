@@ -8,22 +8,28 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class SearchableStationsViewModel {
-    let stationsViewModel: StationsViewModel
-    let stations: Observable<[StationsViewModel.TableContent]>
     let search: PublishSubject<String> = PublishSubject<String>()
+    lazy var tableDriver: Driver<[StationsViewModel.TableContent]> = self.stationsDriver()
+    lazy var stationsViewModel: StationsViewModel = StationsViewModel(self.tableDriver)
     
-    private var disposeBag = DisposeBag()
-   
+    private let tableObservable: Observable<[StationsViewModel.TableContent]>
+    
     init() {
-        self.stations = self.search
+        self.tableObservable = self.search
             .debounce(0.5, scheduler: MainScheduler.instance)
             .filter { searchString in !searchString.isEmpty }
             .flatMapLatest { searchString in StopsAPIService.search(withName: searchString) }
             .map { stations in stations.map { s in StationsViewModel.TableContent.StationRow(s) } }
-            .catchError { err in Observable.just([StationsViewModel.TableContent.ErrorRow(err)]) }
-        
-        self.stationsViewModel = StationsViewModel(self.stations)
+    }
+    
+    func stationsDriver(error: Error? = nil) -> Driver<[StationsViewModel.TableContent]> {
+        if let err = error {
+            return [Driver.just([StationsViewModel.TableContent.ErrorRow(err)]),
+                    stationsDriver()].concat()
+        }
+        return tableObservable.asDriver(onErrorRecover: stationsDriver)
     }
 }

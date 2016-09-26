@@ -20,7 +20,7 @@ class StationsView: UITableView {
     }
     
     func bind(with viewModel: StationsViewModel) {
-        viewModel.tableObservable.bindTo(self.rx.items) { (tableView, row, element) in
+        viewModel.tableDriver.drive(self.rx.items) { (tableView, row, element) in
             switch element {
             case .StationRow(let station):
                 let cell = tableView.dequeueReusableCell(withIdentifier: StationViewCell.reusableIdentifier) as! StationViewCell

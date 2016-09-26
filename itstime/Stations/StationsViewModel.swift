@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class StationsViewModel {
     enum TableContent {
@@ -15,9 +16,9 @@ class StationsViewModel {
         case ErrorRow(Error)
     }
     
-    let tableObservable: Observable<[TableContent]>
+    let tableDriver: Driver<[TableContent]>
     
-    init(_ observable: Observable<[TableContent]>) {
-        self.tableObservable = observable
+    init(_ driver: Driver<[TableContent]>) {
+        self.tableDriver = driver
     }
 }
