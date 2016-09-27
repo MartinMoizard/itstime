@@ -21,5 +21,8 @@ class SearchableStationsView: UIView {
         self.viewModel = viewModel
         self.stationsView.bind(with: self.viewModel.stationsViewModel)
         searchField.rx.text.bindTo(viewModel.search).addDisposableTo(disposeBag)
+        self.viewModel.searching.asDriver().drive(onNext: { loading in
+            //todo
+        }).addDisposableTo(disposeBag)
     }
 }

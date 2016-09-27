@@ -33,6 +33,7 @@
 		863355E11D917B5300F6661B /* ProgressSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863355E01D917B5300F6661B /* ProgressSearchBar.swift */; };
 		868C02371D901A2E00D6E837 /* SearchableStationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C02361D901A2E00D6E837 /* SearchableStationsViewModel.swift */; };
 		868C02391D901A3D00D6E837 /* SearchableStationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C02381D901A3D00D6E837 /* SearchableStationsView.swift */; };
+		86EE5A291D9A733900846D08 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EE5A281D9A733900846D08 /* ActivityIndicator.swift */; };
 		972F71501411D9A6C804AE54 /* Pods_itstime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF51A1F4C773E939BD197D8 /* Pods_itstime.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		863355E01D917B5300F6661B /* ProgressSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressSearchBar.swift; sourceTree = "<group>"; };
 		868C02361D901A2E00D6E837 /* SearchableStationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableStationsViewModel.swift; sourceTree = "<group>"; };
 		868C02381D901A3D00D6E837 /* SearchableStationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableStationsView.swift; sourceTree = "<group>"; };
+		86EE5A281D9A733900846D08 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		EEF51A1F4C773E939BD197D8 /* Pods_itstime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itstime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5039EFF27A1B38070CDBFB7 /* Pods-itstime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itstime.release.xcconfig"; path = "Pods/Target Support Files/Pods-itstime/Pods-itstime.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				5B544BD51D8F23C100F97C0E /* Error.swift */,
+				86EE5A281D9A733900846D08 /* ActivityIndicator.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 			files = (
 				5B544BD91D8F27B800F97C0E /* StationViewCell.swift in Sources */,
 				868C02391D901A3D00D6E837 /* SearchableStationsView.swift in Sources */,
+				86EE5A291D9A733900846D08 /* ActivityIndicator.swift in Sources */,
 				5BA15EC81D907AA5001D796F /* SearchViewController.swift in Sources */,
 				5B544BC91D8DE06300F97C0E /* Station.swift in Sources */,
 				863355DD1D9155F200F6661B /* ErrorViewCell.swift in Sources */,
