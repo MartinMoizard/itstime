@@ -1,3 +1,4 @@
+platform :ios, '9.0'
 use_frameworks!
 
 target 'itstime' do
@@ -5,6 +6,7 @@ target 'itstime' do
     pod 'RxCocoa',    '~> 3.0.0-beta.1'
     pod 'Alamofire',  '~> 4.0'
     pod 'AlamofireObjectMapper', '~> 4.0'
+    pod 'Progressable', '~> 0.1.0'
 end
 
 post_install do |installer|
