@@ -19,6 +19,8 @@ class ProgressSearchBar: UISearchBar, Progressable {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.initProgress()
+        self.progressLineWidth = 2
+        self.progressColor = UIColor.red
     }
     
     override func layoutSubviews() {
