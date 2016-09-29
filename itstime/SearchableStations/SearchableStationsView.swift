@@ -15,13 +15,20 @@ class SearchableStationsView: UIView {
     @IBOutlet var stationsView: StationsView!
     
     private var viewModel: SearchableStationsViewModel!
-    private var disposeBag = DisposeBag()
+    private var disposeBag: DisposeBag?
    
     func bind(with viewModel: SearchableStationsViewModel) {
-        self.viewModel = viewModel
-        self.stationsView.bind(with: self.viewModel.stationsViewModel)
-        searchField.rx.text.bindTo(viewModel.search).addDisposableTo(disposeBag)
-        self.viewModel.searching.asDriver().drive(onNext: { [unowned self] loading in self.toggleProgress(loading)}).addDisposableTo(disposeBag)
+        self.disposeBag = DisposeBag()
+        if let disposeBag = self.disposeBag {
+            self.viewModel = viewModel
+            self.stationsView.bind(with: self.viewModel.stationsViewModel)
+            searchField.rx.text.bindTo(viewModel.search).addDisposableTo(disposeBag)
+            self.viewModel.searching.asDriver().drive(onNext: { [unowned self] loading in self.toggleProgress(loading)}).addDisposableTo(disposeBag)
+        }
+    }
+    
+    func unbind() {
+        self.disposeBag = nil
     }
     
     fileprivate func toggleProgress(_ loading: Bool) {

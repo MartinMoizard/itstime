@@ -16,13 +16,20 @@ class StationViewCell: UITableViewCell {
     
     static let reusableIdentifier = "StationViewCell"
     
-    private var disposeBag = DisposeBag()
+    private var disposeBag: DisposeBag?
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     func bind(with viewModel: StationViewModel) {
-        viewModel.name.map{ Optional.some($0) }.bindTo(name.rx.text).addDisposableTo(disposeBag)
+        self.disposeBag = DisposeBag()
+        if let disposeBag = self.disposeBag {
+            viewModel.name.map{ Optional.some($0) }.bindTo(name.rx.text).addDisposableTo(disposeBag)
+        }
+    }
+    
+    func unbind() {
+        self.disposeBag = nil
     }
 }
