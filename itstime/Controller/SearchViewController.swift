@@ -12,23 +12,17 @@ import RxCocoa
 
 class SearchViewController: CoordinatedViewController {
     @IBOutlet var tableView: UITableView!
+    lazy private var searchableStationsView: SearchableStationsView = {
+       return self.view as! SearchableStationsView
+    }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-        let view = self.view as! SearchableStationsView
-        view.bind(with: SearchableStationsViewModel())
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.searchableStationsView.bind(with: SearchableStationsViewModel())
     }
-}
-
-extension SearchViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.view.endEditing(true)
-    }
-}
-
-extension SearchViewController: UITableViewDelegate {
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-      self.view.endEditing(true)
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.searchableStationsView.unbind()
     }
 }
