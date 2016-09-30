@@ -22,10 +22,10 @@ class SearchableStationsView: UIView {
         if let disposeBag = self.disposeBag {
             self.viewModel = viewModel
             self.stationsView.bind(with: self.viewModel.stationsViewModel)
-            self.stationsView.rx.contentOffset.subscribe(onNext: { [unowned self] _ in self.stationsViewDidScroll() }).addDisposableTo(disposeBag)
+            self.stationsView.rx.contentOffset.subscribe(onNext: { [weak self] _ in self?.stationsViewDidScroll() }).addDisposableTo(disposeBag)
             searchField.rx.text.bindTo(viewModel.search).addDisposableTo(disposeBag)
-            searchField.rx.searchButtonClicked.subscribe(onNext: { [unowned self] in self.searchButtonTapped() }).addDisposableTo(disposeBag)
-            self.viewModel.searching.asDriver().drive(onNext: { [unowned self] loading in self.toggleProgress(loading)}).addDisposableTo(disposeBag)
+            searchField.rx.searchButtonClicked.subscribe(onNext: { [weak self] in self?.searchButtonTapped() }).addDisposableTo(disposeBag)
+            self.viewModel.searching.asDriver().drive(onNext: { [weak self] loading in self?.toggleProgress(loading)}).addDisposableTo(disposeBag)
         }
     }
     
