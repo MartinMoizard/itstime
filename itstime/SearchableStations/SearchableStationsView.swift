@@ -12,6 +12,7 @@ import RxCocoa
 
 class SearchableStationsView: UIView {
     @IBOutlet var searchField: ProgressSearchBar!
+    @IBOutlet var stationTypeSegmentedControl: UISegmentedControl!
     @IBOutlet var stationsView: StationsView!
     
     private var viewModel: SearchableStationsViewModel!
@@ -23,8 +24,11 @@ class SearchableStationsView: UIView {
             self.viewModel = viewModel
             self.stationsView.bind(with: self.viewModel.stationsViewModel)
             self.stationsView.rx.contentOffset.subscribe(onNext: { [weak self] _ in self?.stationsViewDidScroll() }).addDisposableTo(disposeBag)
+            
             searchField.rx.text.bindTo(viewModel.search).addDisposableTo(disposeBag)
             searchField.rx.searchButtonClicked.subscribe(onNext: { [weak self] in self?.searchButtonTapped() }).addDisposableTo(disposeBag)
+            stationTypeSegmentedControl.rx.value.bindTo(viewModel.searchType).addDisposableTo(disposeBag)
+            
             self.viewModel.searching.asDriver().drive(onNext: { [weak self] loading in self?.toggleProgress(loading)}).addDisposableTo(disposeBag)
         }
     }
