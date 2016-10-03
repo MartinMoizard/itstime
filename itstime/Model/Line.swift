@@ -15,6 +15,7 @@ class Line: Mappable {
         case rer
         case bus
         case noctilien
+        case tram
     }
     
     var id: Int!
