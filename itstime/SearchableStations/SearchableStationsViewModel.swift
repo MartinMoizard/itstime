@@ -61,7 +61,7 @@ extension Line {
     fileprivate func matches(searchType: SearchableStationsViewModel.SearchType) -> Bool {
         switch searchType {
         case .Railroad:
-            return mode == .metro || mode == .rer || mode == .tram
+            return mode == .metro || mode == .rail || mode == .tram
         case .Bus:
             return mode == .bus || mode == .noctilien
         }

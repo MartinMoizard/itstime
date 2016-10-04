@@ -12,7 +12,7 @@ import ObjectMapper
 class Line: Mappable {
     enum Mode: String {
         case metro
-        case rer
+        case rail
         case bus
         case noctilien
         case tram
