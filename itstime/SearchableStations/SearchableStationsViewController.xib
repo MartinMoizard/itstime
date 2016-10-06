@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchableStationsViewController" customModule="itstime" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="wee-bG-DaX" id="1Gf-KE-Tzg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wee-bG-DaX" customClass="SearchableStationsView" customModule="itstime" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="g7j-eo-jJ2" customClass="ProgressSearchBar" customModule="itstime" customModuleProvider="target">
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fGX-hN-MpJ" customClass="StationsView" customModule="itstime" customModuleProvider="target">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIn-BO-hPR">
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mWO-Bz-L2J">
+                            <segments>
+                                <segment title="Railroad"/>
+                                <segment title="Bus"/>
+                            </segments>
+                        </segmentedControl>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="mWO-Bz-L2J" secondAttribute="trailing" constant="8" id="I8b-ZR-tTy"/>
+                        <constraint firstAttribute="height" constant="41" id="fhn-t0-Cwf"/>
+                        <constraint firstItem="mWO-Bz-L2J" firstAttribute="top" secondItem="ZIn-BO-hPR" secondAttribute="top" constant="6" id="tCZ-Kr-BNB"/>
+                        <constraint firstAttribute="bottom" secondItem="mWO-Bz-L2J" secondAttribute="bottom" constant="7" id="vba-K8-HBR"/>
+                        <constraint firstItem="mWO-Bz-L2J" firstAttribute="leading" secondItem="ZIn-BO-hPR" secondAttribute="leading" constant="8" id="vmp-XK-aPG"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="g7j-eo-jJ2" secondAttribute="trailing" id="6YR-4E-oHg"/>
+                <constraint firstItem="g7j-eo-jJ2" firstAttribute="leading" secondItem="wee-bG-DaX" secondAttribute="leading" id="9AE-uT-Epr"/>
+                <constraint firstItem="ZIn-BO-hPR" firstAttribute="leading" secondItem="wee-bG-DaX" secondAttribute="leading" id="9iy-Rr-3Dg"/>
+                <constraint firstAttribute="trailing" secondItem="ZIn-BO-hPR" secondAttribute="trailing" id="Gqn-VL-meU"/>
+                <constraint firstItem="fGX-hN-MpJ" firstAttribute="top" secondItem="ZIn-BO-hPR" secondAttribute="bottom" id="LIN-4R-JTX"/>
+                <constraint firstItem="g7j-eo-jJ2" firstAttribute="top" secondItem="wee-bG-DaX" secondAttribute="top" constant="20" id="MRw-yB-ooL"/>
+                <constraint firstAttribute="trailing" secondItem="fGX-hN-MpJ" secondAttribute="trailing" id="W30-8O-LnM"/>
+                <constraint firstAttribute="bottom" secondItem="fGX-hN-MpJ" secondAttribute="bottom" id="hPS-Qz-RuH"/>
+                <constraint firstItem="ZIn-BO-hPR" firstAttribute="top" secondItem="g7j-eo-jJ2" secondAttribute="bottom" id="uxz-JZ-e0T"/>
+                <constraint firstItem="fGX-hN-MpJ" firstAttribute="leading" secondItem="wee-bG-DaX" secondAttribute="leading" id="zfh-cK-JB9"/>
+            </constraints>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+            <connections>
+                <outlet property="searchField" destination="g7j-eo-jJ2" id="uVQ-gq-C3g"/>
+                <outlet property="stationTypeSegmentedControl" destination="mWO-Bz-L2J" id="2nQ-3D-KSN"/>
+                <outlet property="stationsView" destination="fGX-hN-MpJ" id="T2f-II-NEV"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="107.5"/>
+        </view>
+    </objects>
+</document>

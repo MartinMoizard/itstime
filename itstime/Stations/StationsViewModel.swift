@@ -10,15 +10,18 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class StationsViewModel {
+class StationsViewModel : ComponentViewModel {
     enum TableContent {
         case StationRow(Station)
         case ErrorRow(Error)
     }
     
+    // Input
     let tableDriver: Driver<[TableContent]>
+    var tableContentInset = Driver.just(UIEdgeInsets.zero)
     
-    init(_ driver: Driver<[TableContent]>) {
+    init(withCoordinator coordinator: Coordinator, andTableDriver driver: Driver<[TableContent]>) {
         self.tableDriver = driver
+        super.init(coordinator)
     }
 }

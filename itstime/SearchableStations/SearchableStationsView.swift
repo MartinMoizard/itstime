@@ -10,30 +10,28 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SearchableStationsView: UIView {
+class SearchableStationsView: UIView, ComponentView {
     @IBOutlet var searchField: ProgressSearchBar!
     @IBOutlet var stationTypeSegmentedControl: UISegmentedControl!
     @IBOutlet var stationsView: StationsView!
     
-    private var viewModel: SearchableStationsViewModel!
-    private var disposeBag: DisposeBag?
-   
-    func bind(with viewModel: SearchableStationsViewModel) {
-        self.disposeBag = DisposeBag()
-        if let disposeBag = self.disposeBag {
-            self.viewModel = viewModel
-            self.stationsView.bind(with: self.viewModel.stationsViewModel)
-            self.stationsView.rx.contentOffset.subscribe(onNext: { [weak self] _ in self?.stationsViewDidScroll() }).addDisposableTo(disposeBag)
-            
-            searchField.rx.text.bindTo(viewModel.search).addDisposableTo(disposeBag)
-            searchField.rx.searchButtonClicked.subscribe(onNext: { [weak self] in self?.searchButtonTapped() }).addDisposableTo(disposeBag)
-            stationTypeSegmentedControl.rx.value.bindTo(viewModel.searchType).addDisposableTo(disposeBag)
-            
-            self.viewModel.searching.asDriver().drive(onNext: { [weak self] loading in self?.toggleProgress(loading)}).addDisposableTo(disposeBag)
+    func bind(to viewModel: ComponentViewModel) {
+        guard let viewModel = viewModel as? SearchableStationsViewModel else {
+            fatalError("Expected viewModel of type SearchableStationsViewModel")
         }
+        
+        self.disposeBag = DisposeBag()
+        self.stationsView.bind(to: viewModel.stationsViewModel)
+        self.stationsView.rx.contentOffset.subscribe(onNext: { [weak self] _ in self?.stationsViewDidScroll() }).addDisposableTo(disposeBag!)
+        
+        searchField.rx.text.bindTo(viewModel.search).addDisposableTo(disposeBag!)
+        searchField.rx.searchButtonClicked.subscribe(onNext: { [weak self] in self?.searchButtonTapped() }).addDisposableTo(disposeBag!)
+        stationTypeSegmentedControl.rx.value.bindTo(viewModel.searchType).addDisposableTo(disposeBag!)
+        
+        viewModel.searching.asDriver().drive(onNext: { [weak self] loading in self?.toggleProgress(loading)}).addDisposableTo(disposeBag!)
     }
     
-    func unbind() {
+    func unbind(from viewModel: ComponentViewModel) {
         self.disposeBag = nil
     }
     

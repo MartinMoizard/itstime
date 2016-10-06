@@ -8,10 +8,7 @@
 
 import Foundation
 import UIKit
-
-protocol Coordinator {
-    func start()
-}
+import RxCocoa
 
 final class AppCoordinator : Coordinator {
     let window: UIWindow
@@ -32,11 +29,13 @@ final class AppCoordinator : Coordinator {
     
     func setupTabBar() {
         let favVc = FavoritesViewController()
-        favVc.delegate = self
         favVc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.favorites, tag: 0)
         
-        let searchVc = SearchViewController()
-        searchVc.delegate = self
+        let searchVc = SearchableStationsViewController()
+        let viewModel = SearchableStationsViewModel(coordinator: self)
+        viewModel.stationsViewModel.tableContentInset = Driver.just(UIEdgeInsetsMake(0, 0, self.rootViewController.tabBar.frame.height, 0))
+        searchVc.viewModel = viewModel
+        searchVc.coordinator = self
         searchVc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.search, tag: 1)
         
         self.rootViewController.viewControllers = [favVc, searchVc]
@@ -45,12 +44,8 @@ final class AppCoordinator : Coordinator {
     func start() {
         self.rootViewController.selectedIndex = 1
     }
-}
-
-extension AppCoordinator : CoordinatedViewControllerDelegate {
-    func coordinatedViewControllerDidLoad(_ viewController: CoordinatedViewController) {
-        if let searchVc = viewController as? SearchViewController {
-            searchVc.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.rootViewController.tabBar.frame.height, 0)
-        }
+    
+    func transition(toViewModel viewModel: ComponentViewModel) {
+        
     }
 }

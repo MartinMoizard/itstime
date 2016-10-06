@@ -11,25 +11,20 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class StationViewCell: UITableViewCell {
+class StationViewCell: UITableViewCell, ComponentView {
     @IBOutlet var name: UILabel!
     
     static let reusableIdentifier = "StationViewCell"
     
-    private var disposeBag: DisposeBag?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    func bind(with viewModel: StationViewModel) {
-        self.disposeBag = DisposeBag()
-        if let disposeBag = self.disposeBag {
-            viewModel.name.map{ Optional.some($0) }.bindTo(name.rx.text).addDisposableTo(disposeBag)
+    func bind(to viewModel: ComponentViewModel) {
+        guard let viewModel = viewModel as? StationViewModel else {
+            fatalError("Expected viewModel of type StationViewModel")
         }
+        self.disposeBag = DisposeBag()
+        viewModel.name.map { Optional.some($0) }.bindTo(name.rx.text).addDisposableTo(self.disposeBag!)
     }
     
-    func unbind() {
+    func unbind(from viewModel: ComponentViewModel) {
         self.disposeBag = nil
     }
 }

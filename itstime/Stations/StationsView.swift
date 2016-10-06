@@ -11,33 +11,39 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class StationsView: UITableView {
-    private var disposeBag: DisposeBag?
+class StationsView: UITableView, ComponentView {
     
     override func awakeFromNib() {
         self.register(UINib(nibName: "StationViewCell", bundle: nil), forCellReuseIdentifier: StationViewCell.reusableIdentifier)
         self.register(UINib(nibName: "ErrorViewCell", bundle: nil), forCellReuseIdentifier: ErrorViewCell.reusableIdentifier)
     }
     
-    func bind(with viewModel: StationsViewModel) {
-        self.disposeBag = DisposeBag()
-        if let disposeBag = self.disposeBag {
-            viewModel.tableDriver.drive(self.rx.items) { (tableView, row, element) in
-                switch element {
-                case .StationRow(let station):
-                    let cell = tableView.dequeueReusableCell(withIdentifier: StationViewCell.reusableIdentifier) as! StationViewCell
-                    cell.bind(with: StationViewModel(station))
-                    return cell
-                case .ErrorRow(let error):
-                    let cell = tableView.dequeueReusableCell(withIdentifier: ErrorViewCell.reusableIdentifier) as! ErrorViewCell
-                    cell.bind(withError: error as NSError)
-                    return cell
-                }
-            }.addDisposableTo(disposeBag)
+    func bind(to viewModel: ComponentViewModel) {
+        guard let viewModel = viewModel as? StationsViewModel else {
+            fatalError("Expected viewModel of type StationsViewModel")
         }
+        
+        self.disposeBag = DisposeBag()
+        
+        viewModel.tableDriver.drive(self.rx.items) { (tableView, row, element) in
+            switch element {
+            case .StationRow(let station):
+                let cell = tableView.dequeueReusableCell(withIdentifier: StationViewCell.reusableIdentifier) as! StationViewCell
+                cell.bind(to: StationViewModel(withCoordinator: viewModel.coordinator, andStation: station))
+                return cell
+            case .ErrorRow(let error):
+                let cell = tableView.dequeueReusableCell(withIdentifier: ErrorViewCell.reusableIdentifier) as! ErrorViewCell
+                cell.bind(withError: error as NSError)
+                return cell
+            }
+        }.addDisposableTo(disposeBag!)
+        
+        viewModel.tableContentInset.drive(onNext: { [weak self] inset in
+            self?.contentInset = inset
+        }).addDisposableTo(disposeBag!)
     }
     
-    func unbind() {
+    func unbind(from viewModel: ComponentViewModel) {
         self.disposeBag = nil
     }
 }

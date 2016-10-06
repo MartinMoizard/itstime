@@ -10,13 +10,14 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class StationViewModel {
+class StationViewModel : ComponentViewModel {
     private let station: Observable<Station>
     
     let name: Observable<String>
     
-    init(_ station: Station) {
+    init(withCoordinator coordinator: Coordinator, andStation station: Station) {
         self.station = Observable.just(station)
         self.name = self.station.map { $0.name }
+        super.init(coordinator)
     }
 }

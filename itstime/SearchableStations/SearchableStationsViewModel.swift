@@ -10,29 +10,36 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class SearchableStationsViewModel {
+class SearchableStationsViewModel : ComponentViewModel {
     enum SearchType: Int {
         case Railroad = 0
         case Bus = 1
     }
     
+    private(set) var stationsViewModel: StationsViewModel = StationsViewModel(withCoordinator: EmptyCoordinator(), andTableDriver: Driver.empty())
+    
+    // Input
+    let searching = ActivityIndicator()
+    private(set) var tableDriver: Driver<[StationsViewModel.TableContent]> = Driver.empty()
+    
+    // Output
     let search: PublishSubject<String> = PublishSubject<String>()
     let searchType: PublishSubject<Int> = PublishSubject<Int>()
-    let searching = ActivityIndicator()
-    lazy var tableDriver: Driver<[StationsViewModel.TableContent]> = self.stationsDriver()
-    lazy var stationsViewModel: StationsViewModel = StationsViewModel(self.tableDriver)
     
+    // Private
     private var allStationsObservable: Observable<[StationsViewModel.TableContent]> = Observable.empty()
     private var filteredStationsObservable: Observable<[StationsViewModel.TableContent]> = Observable.empty()
     
-    init() {
-        allStationsObservable = self.search
+    init(coordinator: Coordinator) {
+        super.init(coordinator)
+        
+        self.allStationsObservable = self.search
             .debounce(0.5, scheduler: MainScheduler.instance)
             .filter { searchString in !searchString.isEmpty }
             .flatMapLatest { [unowned self] searchString in StopsAPIService.search(withName: searchString).trackActivity(self.searching) }
             .map { stations in stations.map { s in StationsViewModel.TableContent.StationRow(s) } }
         
-        filteredStationsObservable = Observable
+        self.filteredStationsObservable = Observable
             .combineLatest(self.allStationsObservable, self.searchType, resultSelector: { tableContent, searchType in
                 return (tableContent, SearchType(rawValue: searchType) ?? .Railroad)
             })
@@ -46,6 +53,10 @@ class SearchableStationsViewModel {
                     }
                 }
             }
+        
+        self.tableDriver = self.stationsDriver()
+        
+        self.stationsViewModel = StationsViewModel(withCoordinator: coordinator, andTableDriver: self.tableDriver)
     }
     
     func stationsDriver(error: Error? = nil) -> Driver<[StationsViewModel.TableContent]> {
