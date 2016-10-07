@@ -22,13 +22,22 @@ class SearchableStationsView: UIView, ComponentView {
         
         self.disposeBag = DisposeBag()
         self.stationsView.bind(to: viewModel.stationsViewModel)
-        self.stationsView.rx.contentOffset.subscribe(onNext: { [weak self] _ in self?.stationsViewDidScroll() }).addDisposableTo(disposeBag!)
+        self.stationsView.rx.contentOffset.subscribe(onNext: { [weak self] _ in
+            guard let strongSelf = self else { return }
+            strongSelf.stationsViewDidScroll()
+        }).addDisposableTo(disposeBag!)
         
         searchField.rx.text.bindTo(viewModel.search).addDisposableTo(disposeBag!)
-        searchField.rx.searchButtonClicked.subscribe(onNext: { [weak self] in self?.searchButtonTapped() }).addDisposableTo(disposeBag!)
+        searchField.rx.searchButtonClicked.subscribe(onNext: { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.searchButtonTapped()
+        }).addDisposableTo(disposeBag!)
         stationTypeSegmentedControl.rx.value.bindTo(viewModel.searchType).addDisposableTo(disposeBag!)
         
-        viewModel.searching.asDriver().drive(onNext: { [weak self] loading in self?.toggleProgress(loading)}).addDisposableTo(disposeBag!)
+        viewModel.searching.asDriver().drive(onNext: { [weak self] loading in
+            guard let strongSelf = self else { return }
+            strongSelf.toggleProgress(loading)
+        }).addDisposableTo(disposeBag!)
     }
     
     func unbind(from viewModel: ComponentViewModel) {

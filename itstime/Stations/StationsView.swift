@@ -39,7 +39,8 @@ class StationsView: UITableView, ComponentView {
         }.addDisposableTo(disposeBag!)
         
         viewModel.tableContentInset.drive(onNext: { [weak self] inset in
-            self?.contentInset = inset
+            guard let strongSelf = self else { return }
+            strongSelf.contentInset = inset
         }).addDisposableTo(disposeBag!)
     }
     

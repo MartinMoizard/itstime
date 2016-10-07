@@ -36,7 +36,10 @@ class SearchableStationsViewModel : ComponentViewModel {
         self.allStationsObservable = self.search
             .debounce(0.5, scheduler: MainScheduler.instance)
             .filter { searchString in !searchString.isEmpty }
-            .flatMapLatest { [unowned self] searchString in StopsAPIService.search(withName: searchString).trackActivity(self.searching) }
+            .flatMapLatest { [weak self] searchString -> Observable<[Station]> in
+                guard let strongSelf = self else { return Observable.empty() }
+                return StopsAPIService.search(withName: searchString).trackActivity(strongSelf.searching)
+            }
             .map { stations in stations.map { s in StationsViewModel.TableContent.stationRow(s) } }
         
         self.filteredStationsObservable = Observable
