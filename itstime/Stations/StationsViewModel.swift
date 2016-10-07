@@ -12,8 +12,8 @@ import RxCocoa
 
 class StationsViewModel : ComponentViewModel {
     enum TableContent {
-        case StationRow(Station)
-        case ErrorRow(Error)
+        case stationRow(Station)
+        case errorRow(Error)
     }
     
     // Input

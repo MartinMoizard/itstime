@@ -12,8 +12,8 @@ import RxCocoa
 
 class SearchableStationsViewModel : ComponentViewModel {
     enum SearchType: Int {
-        case Railroad = 0
-        case Bus = 1
+        case railroad = 0
+        case bus = 1
     }
     
     private(set) var stationsViewModel: StationsViewModel = StationsViewModel(withCoordinator: EmptyCoordinator(), andTableDriver: Driver.empty())
@@ -37,18 +37,18 @@ class SearchableStationsViewModel : ComponentViewModel {
             .debounce(0.5, scheduler: MainScheduler.instance)
             .filter { searchString in !searchString.isEmpty }
             .flatMapLatest { [unowned self] searchString in StopsAPIService.search(withName: searchString).trackActivity(self.searching) }
-            .map { stations in stations.map { s in StationsViewModel.TableContent.StationRow(s) } }
+            .map { stations in stations.map { s in StationsViewModel.TableContent.stationRow(s) } }
         
         self.filteredStationsObservable = Observable
             .combineLatest(self.allStationsObservable, self.searchType, resultSelector: { tableContent, searchType in
-                return (tableContent, SearchType(rawValue: searchType) ?? .Railroad)
+                return (tableContent, SearchType(rawValue: searchType) ?? .railroad)
             })
             .map { (rows, type) in
                 return rows.filter { row in
                     switch row {
-                    case .StationRow(let station):
+                    case .stationRow(let station):
                         return station.lines.contains(where: { line in line.matches(searchType: type) })
-                    case .ErrorRow(_):
+                    case .errorRow(_):
                         return true
                     }
                 }
@@ -61,7 +61,7 @@ class SearchableStationsViewModel : ComponentViewModel {
     
     func stationsDriver(error: Error? = nil) -> Driver<[StationsViewModel.TableContent]> {
         if let err = error {
-            return [Driver.just([StationsViewModel.TableContent.ErrorRow(err)]),
+            return [Driver.just([StationsViewModel.TableContent.errorRow(err)]),
                     stationsDriver()].concat()
         }
         return filteredStationsObservable.asDriver(onErrorRecover: stationsDriver)
@@ -71,9 +71,9 @@ class SearchableStationsViewModel : ComponentViewModel {
 extension Line {
     fileprivate func matches(searchType: SearchableStationsViewModel.SearchType) -> Bool {
         switch searchType {
-        case .Railroad:
+        case .railroad:
             return mode == .metro || mode == .rail || mode == .tram
-        case .Bus:
+        case .bus:
             return mode == .bus || mode == .noctilien
         }
     }

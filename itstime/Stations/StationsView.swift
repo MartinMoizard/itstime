@@ -27,11 +27,11 @@ class StationsView: UITableView, ComponentView {
         
         viewModel.tableDriver.drive(self.rx.items) { (tableView, row, element) in
             switch element {
-            case .StationRow(let station):
+            case .stationRow(let station):
                 let cell = tableView.dequeueReusableCell(withIdentifier: StationViewCell.reusableIdentifier) as! StationViewCell
                 cell.bind(to: StationViewModel(withCoordinator: viewModel.coordinator, andStation: station))
                 return cell
-            case .ErrorRow(let error):
+            case .errorRow(let error):
                 let cell = tableView.dequeueReusableCell(withIdentifier: ErrorViewCell.reusableIdentifier) as! ErrorViewCell
                 cell.bind(withError: error as NSError)
                 return cell
