@@ -42,6 +42,13 @@ class StationsView: UITableView, ComponentView {
             guard let strongSelf = self else { return }
             strongSelf.contentInset = inset
         }).addDisposableTo(disposeBag!)
+        
+        self.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            guard let strongSelf = self else { return }
+            let selectedModel: StationsViewModel.TableContent? = try? strongSelf.rx.model(indexPath)
+            guard let model = selectedModel else { return }
+            viewModel.showStation.execute(model)
+        }).addDisposableTo(disposeBag!)
     }
     
     func unbind(from viewModel: ComponentViewModel) {

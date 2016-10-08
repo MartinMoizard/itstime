@@ -7,6 +7,7 @@ target 'itstime' do
     pod 'Alamofire',  '~> 4.0'
     pod 'AlamofireObjectMapper', '~> 4.0'
     pod 'Progressable', '~> 0.1.0'
+    pod 'Action', '~> 2.0.0-beta.1'
 end
 
 post_install do |installer|
