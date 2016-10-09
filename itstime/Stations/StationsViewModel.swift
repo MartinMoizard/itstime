@@ -25,7 +25,8 @@ class StationsViewModel : ComponentViewModel {
             switch item {
             case .stationRow(let station):
                 let stationVm = StationViewModel(withCoordinator: strongSelf.coordinator, andStation: station)
-                strongSelf.coordinator.transition(toViewModel: stationVm)
+                strongSelf.coordinator.transition(toViewModel: stationVm,
+                                                  intent: SceneTransitionIntent(with: .push, to: .ofType(LinesStationViewController.self)))
                 break
             default:
                 break
@@ -36,7 +37,6 @@ class StationsViewModel : ComponentViewModel {
     
     // Input
     let tableDriver: Driver<[TableContent]>
-    var tableContentInset = Driver.just(UIEdgeInsets.zero)
     
     init(withCoordinator coordinator: Coordinator, andTableDriver driver: Driver<[TableContent]>) {
         self.tableDriver = driver

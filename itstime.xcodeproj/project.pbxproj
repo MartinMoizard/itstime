@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B4069CE1DAABFF40040D5AC /* LinesStationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4069CD1DAABFF40040D5AC /* LinesStationViewModel.swift */; };
+		5B4069D11DAAC2A50040D5AC /* LinesStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4069CF1DAAC2A50040D5AC /* LinesStationViewController.swift */; };
+		5B4069D21DAAC2A50040D5AC /* LinesStationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4069D01DAAC2A50040D5AC /* LinesStationViewController.xib */; };
+		5B4069D41DAAC2CE0040D5AC /* LinesStationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4069D31DAAC2CE0040D5AC /* LinesStationView.swift */; };
+		5B4069D81DAADB360040D5AC /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4069D71DAADB360040D5AC /* SearchCoordinator.swift */; };
+		5B4069DA1DAADE9A0040D5AC /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4069D91DAADE9A0040D5AC /* FavoritesCoordinator.swift */; };
 		5B544BC91D8DE06300F97C0E /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B544BC81D8DE06300F97C0E /* Station.swift */; };
 		5B544BCC1D8DE0D200F97C0E /* StationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B544BCB1D8DE0D200F97C0E /* StationViewModel.swift */; };
 		5B544BCE1D8EE06900F97C0E /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B544BCD1D8EE06900F97C0E /* Line.swift */; };
@@ -58,6 +64,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B4069CD1DAABFF40040D5AC /* LinesStationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinesStationViewModel.swift; sourceTree = "<group>"; };
+		5B4069CF1DAAC2A50040D5AC /* LinesStationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinesStationViewController.swift; sourceTree = "<group>"; };
+		5B4069D01DAAC2A50040D5AC /* LinesStationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LinesStationViewController.xib; sourceTree = "<group>"; };
+		5B4069D31DAAC2CE0040D5AC /* LinesStationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinesStationView.swift; sourceTree = "<group>"; };
+		5B4069D71DAADB360040D5AC /* SearchCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		5B4069D91DAADE9A0040D5AC /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
 		5B544BC81D8DE06300F97C0E /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		5B544BCB1D8DE0D200F97C0E /* StationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationViewModel.swift; sourceTree = "<group>"; };
 		5B544BCD1D8EE06900F97C0E /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -131,6 +143,17 @@
 				EEF51A1F4C773E939BD197D8 /* Pods_itstime.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B4069CC1DAABFE20040D5AC /* LinesStation */ = {
+			isa = PBXGroup;
+			children = (
+				5B4069CD1DAABFF40040D5AC /* LinesStationViewModel.swift */,
+				5B4069D31DAAC2CE0040D5AC /* LinesStationView.swift */,
+				5B4069CF1DAAC2A50040D5AC /* LinesStationViewController.swift */,
+				5B4069D01DAAC2A50040D5AC /* LinesStationViewController.xib */,
+			);
+			path = LinesStation;
 			sourceTree = "<group>";
 		};
 		5B544BCA1D8DE0BB00F97C0E /* Station */ = {
@@ -213,9 +236,12 @@
 				5B544BCA1D8DE0BB00F97C0E /* Station */,
 				5B544BDB1D8F30A900F97C0E /* Stations */,
 				868C02351D901A2500D6E837 /* SearchableStations */,
+				5B4069CC1DAABFE20040D5AC /* LinesStation */,
 				5BA15EC11D907AA5001D796F /* Controller */,
 				5BB52B8C1D8D92720020D33D /* AppDelegate.swift */,
 				5BB52BBA1D8D94900020D33D /* AppCoordinator.swift */,
+				5B4069D71DAADB360040D5AC /* SearchCoordinator.swift */,
+				5B4069D91DAADE9A0040D5AC /* FavoritesCoordinator.swift */,
 				5BB52B931D8D92720020D33D /* Assets.xcassets */,
 				5BB52B951D8D92720020D33D /* LaunchScreen.storyboard */,
 				5BB52B981D8D92720020D33D /* Info.plist */,
@@ -406,6 +432,7 @@
 				5B544BDA1D8F27B800F97C0E /* StationViewCell.xib in Resources */,
 				5BB650081DA3F1E10023FE74 /* SearchableStationsViewController.xib in Resources */,
 				863355DE1D9155F200F6661B /* ErrorViewCell.xib in Resources */,
+				5B4069D21DAAC2A50040D5AC /* LinesStationViewController.xib in Resources */,
 				5BA15EC71D907AA5001D796F /* FavoritesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +510,7 @@
 				5B544BD91D8F27B800F97C0E /* StationViewCell.swift in Sources */,
 				5BB650031DA3ED240023FE74 /* ComponentViewController.swift in Sources */,
 				868C02391D901A3D00D6E837 /* SearchableStationsView.swift in Sources */,
+				5B4069D81DAADB360040D5AC /* SearchCoordinator.swift in Sources */,
 				86EE5A291D9A733900846D08 /* ActivityIndicator.swift in Sources */,
 				5BB650021DA3ED240023FE74 /* ComponentView.swift in Sources */,
 				5B544BC91D8DE06300F97C0E /* Station.swift in Sources */,
@@ -496,10 +524,14 @@
 				5B544BCC1D8DE0D200F97C0E /* StationViewModel.swift in Sources */,
 				5BA15EC61D907AA5001D796F /* FavoritesViewController.swift in Sources */,
 				5BB64FF81DA3E41D0023FE74 /* Coordinator.swift in Sources */,
+				5B4069D41DAAC2CE0040D5AC /* LinesStationView.swift in Sources */,
 				5B544BCE1D8EE06900F97C0E /* Line.swift in Sources */,
 				863355E11D917B5300F6661B /* ProgressSearchBar.swift in Sources */,
 				5B544BD31D8EE33000F97C0E /* StopsAPIService.swift in Sources */,
 				5B544BD61D8F23C100F97C0E /* Error.swift in Sources */,
+				5B4069CE1DAABFF40040D5AC /* LinesStationViewModel.swift in Sources */,
+				5B4069D11DAAC2A50040D5AC /* LinesStationViewController.swift in Sources */,
+				5B4069DA1DAADE9A0040D5AC /* FavoritesCoordinator.swift in Sources */,
 				5BB52B8D1D8D92720020D33D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

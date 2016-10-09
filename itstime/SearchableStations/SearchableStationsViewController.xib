@@ -48,19 +48,19 @@
                 <constraint firstItem="ZIn-BO-hPR" firstAttribute="leading" secondItem="wee-bG-DaX" secondAttribute="leading" id="9iy-Rr-3Dg"/>
                 <constraint firstAttribute="trailing" secondItem="ZIn-BO-hPR" secondAttribute="trailing" id="Gqn-VL-meU"/>
                 <constraint firstItem="fGX-hN-MpJ" firstAttribute="top" secondItem="ZIn-BO-hPR" secondAttribute="bottom" id="LIN-4R-JTX"/>
-                <constraint firstItem="g7j-eo-jJ2" firstAttribute="top" secondItem="wee-bG-DaX" secondAttribute="top" constant="20" id="MRw-yB-ooL"/>
+                <constraint firstItem="g7j-eo-jJ2" firstAttribute="top" secondItem="wee-bG-DaX" secondAttribute="top" id="MRw-yB-ooL"/>
                 <constraint firstAttribute="trailing" secondItem="fGX-hN-MpJ" secondAttribute="trailing" id="W30-8O-LnM"/>
                 <constraint firstAttribute="bottom" secondItem="fGX-hN-MpJ" secondAttribute="bottom" id="hPS-Qz-RuH"/>
                 <constraint firstItem="ZIn-BO-hPR" firstAttribute="top" secondItem="g7j-eo-jJ2" secondAttribute="bottom" id="uxz-JZ-e0T"/>
                 <constraint firstItem="fGX-hN-MpJ" firstAttribute="leading" secondItem="wee-bG-DaX" secondAttribute="leading" id="zfh-cK-JB9"/>
             </constraints>
-            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+            <nil key="simulatedStatusBarMetrics"/>
             <connections>
                 <outlet property="searchField" destination="g7j-eo-jJ2" id="uVQ-gq-C3g"/>
                 <outlet property="stationTypeSegmentedControl" destination="mWO-Bz-L2J" id="2nQ-3D-KSN"/>
                 <outlet property="stationsView" destination="fGX-hN-MpJ" id="T2f-II-NEV"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="107.5"/>
+            <point key="canvasLocation" x="-247" y="75"/>
         </view>
     </objects>
 </document>

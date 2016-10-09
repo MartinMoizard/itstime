@@ -18,6 +18,7 @@ final class AppCoordinator : Coordinator {
     init(window: UIWindow) {
         self.window = window
         self.rootViewController = UITabBarController()
+        self.rootViewController.tabBar.isTranslucent = false
         self.childCoordinators = NSMutableArray()
         
         setupTabBar()
@@ -28,24 +29,28 @@ final class AppCoordinator : Coordinator {
     }
     
     func setupTabBar() {
-        let favVc = FavoritesViewController()
-        favVc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.favorites, tag: 0)
+        let favoriteNavigationController = UINavigationController()
+        favoriteNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.favorites, tag: 0)
         
-        let searchVc = SearchableStationsViewController()
-        let viewModel = SearchableStationsViewModel(coordinator: self)
-        viewModel.stationsViewModel.tableContentInset = Driver.just(UIEdgeInsetsMake(0, 0, self.rootViewController.tabBar.frame.height, 0))
-        searchVc.viewModel = viewModel
-        searchVc.coordinator = self
-        searchVc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.search, tag: 1)
+        let searchNavigationController = UINavigationController()
+        searchNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.search, tag: 1)
         
-        self.rootViewController.viewControllers = [favVc, searchVc]
+        self.rootViewController.viewControllers = [favoriteNavigationController, searchNavigationController]
+        
+        let favCoordiantor = FavoritesCoordinator(rootViewController: favoriteNavigationController)
+        favCoordiantor.start()
+        childCoordinators.add(favCoordiantor)
+        
+        let searchCoordinator = SearchCoordinator(rootViewController: searchNavigationController)
+        searchCoordinator.start()
+        childCoordinators.add(searchCoordinator)
     }
     
     func start() {
         self.rootViewController.selectedIndex = 1
     }
     
-    func transition(toViewModel viewModel: ComponentViewModel) {
+    func transition(toViewModel viewModel: ComponentViewModel, intent: SceneTransitionIntent) {
         
     }
 }
